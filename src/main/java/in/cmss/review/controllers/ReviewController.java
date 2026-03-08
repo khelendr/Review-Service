@@ -29,7 +29,6 @@ public class ReviewController {
 	@Autowired
 	private ReviewMessageProducer messageProducer;
 	
-	
 	@GetMapping
 	public ResponseEntity<List<Review>> getAllReviews(@RequestParam Long companyId) {
 		return new ResponseEntity<List<Review>>(this.reviewService.getAllReviews(companyId), HttpStatus.OK);
@@ -82,11 +81,5 @@ public class ReviewController {
 
 		return averageRating;
 	}
-
 }
 
-//GET /reviews?companyId={companyId}
-//POST /reviews?companyId={companyId}
-//GET /reviews/{reviewId}
-//PUT /reviews/{reviewId}
-//DELETE /reviews/{reviewId}
